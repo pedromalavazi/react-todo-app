@@ -1,15 +1,18 @@
+import { useAppContext } from "../../../../rooks/useAppContext"
 import styles from "./ItemList.module.css"
 
-export function ItemList(props) {
+export function ItemList({ name, id }) {
 
-    function removeItem() {
+    const { removeTask } = useAppContext()
 
+    function handleRemove() {
+        removeTask(id);
     }
 
     return (
         <li className={styles.container}>
-            <strong>{props.name}</strong>
-            <button onClick={removeItem}>-</button>
+            <strong>{name}</strong>
+            <button onClick={handleRemove}>-</button>
         </li>
     )
 }

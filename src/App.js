@@ -1,13 +1,13 @@
-import { Header } from "./components/Header";
-import { Home } from "./pages/Home";
+import { BrowserRouter } from "react-router-dom";
+import { Router } from "./Router"
+import { AppContextProvider } from "./contexts/AppContext";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <Header />
-      <Home />
-    </div>
-  );
+    <AppContextProvider>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </AppContextProvider>
+  )
 }
-
-export default App;
