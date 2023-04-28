@@ -15,7 +15,7 @@ export function AppContextProvider({ children }) {
 
         const { data: newTask } = await api.post("/tasks", { name: taskName });
 
-        setTasks(prev => [...prev, newTask.data]);
+        setTasks(prev => [...prev, newTask]);
     }
 
     async function removeTask(id) {
